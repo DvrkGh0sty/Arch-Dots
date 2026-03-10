@@ -1,0 +1,160 @@
+/*******************************************************************************
+ * Rofi Theme Switcher Configuration
+ * Optimized for wallpaper selection with pywal integration
+ *******************************************************************************/
+
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "󰀻";
+    display-run: "";
+    display-window: "";
+    drun-display-format: "{name}";
+    font: "JetBrainsMono Nerd Font 11";
+    
+}
+
+* {
+    background:     #1e1e2eFF;
+    background-alt: #313244FF;
+    foreground:     #cdd6f4FF;
+    selected:       #89b4faFF;
+    active:         #a6e3a1FF;
+    urgent:         #f38ba8FF;
+    
+    border-colour:  @selected;
+    handle-colour:  @selected;
+    separatorcolor: @selected;
+}
+
+window {
+    transparency:    "real";
+    location:        center;
+    anchor:          center;
+    fullscreen:      false;
+    width:           400px;
+    border-radius:   12px;
+    cursor:          "default";
+    background-color: @background;
+    border:          2px solid;
+    border-color:    @border-colour;
+}
+
+mainbox {
+    enabled:         true;
+    spacing:         10px;
+    margin:          0px;
+    padding:         15px;
+    background-color: transparent;
+    children:        [ "inputbar", "message", "listview" ];
+}
+
+inputbar {
+    enabled:         true;
+    spacing:         10px;
+    padding:         8px 12px;
+    border-radius:   8px;
+    background-color: @background-alt;
+    text-color:      @foreground;
+    children:        [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:         true;
+    background-color: inherit;
+    text-color:      @selected;
+}
+
+entry {
+    enabled:         true;
+    placeholder:     "Search wallpapers...";
+    background-color: inherit;
+    text-color:      inherit;
+    cursor:          text;
+    placeholder-color: #6c7086;
+}
+
+message {
+    enabled:         true;
+    margin:          0px;
+    padding:         10px;
+    border-radius:   8px;
+    background-color: @background-alt;
+    text-color:      @foreground;
+}
+
+textbox {
+    background-color: inherit;
+    text-color:      inherit;
+    vertical-align:  0.5;
+    horizontal-align: 0.0;
+}
+
+listview {
+    enabled:         true;
+    columns:         1;
+    lines:           8;
+    cycle:           true;
+    dynamic:         true;
+    scrollbar:       true;
+    layout:          vertical;
+    reverse:         false;
+    fixed-height:    true;
+    fixed-columns:   true;
+    spacing:         5px;
+    background-color: transparent;
+    cursor:          "default";
+}
+
+scrollbar {
+    handle-width:    5px;
+    handle-color:    @handle-colour;
+    background-color: @background-alt;
+    border-radius:   8px;
+}
+
+element {
+    enabled:         true;
+    spacing:         10px;
+    padding:         8px;
+    border-radius:   6px;
+    background-color: transparent;
+    text-color:      @foreground;
+    cursor:          pointer;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color:      @foreground;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color:      @background;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color:      @foreground;
+}
+
+element-icon {
+    background-color: transparent;
+    size:            20px;
+    cursor:          inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:      inherit;
+    cursor:          inherit;
+    vertical-align:  0.5;
+    horizontal-align: 0.0;
+}
+
+error-message {
+    padding:         20px;
+    background-color: @background;
+    text-color:      @foreground;
+}
