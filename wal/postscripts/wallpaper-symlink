@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -sf "$(cat ~/.cache/wal/wal)" ~/.cache/wal/current-wallpaper
